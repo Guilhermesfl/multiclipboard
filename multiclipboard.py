@@ -7,7 +7,11 @@ def save_items(filepath, data):
         json.dump(data, f)
 
 
-save_items("test.json", {"key": "value"})
+def load_items(filepath):
+    with open(filepath, "r") as f:
+        data = json.load(f)
+        return data
+
 
 if len(sys.argv) == 2:
     command = sys.argv[1]
