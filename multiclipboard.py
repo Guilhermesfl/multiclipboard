@@ -11,9 +11,12 @@ def save_data(filepath, data):
 
 
 def load_data(filepath):
-    with open(filepath, "r") as f:
-        data = json.load(f)
-        return data
+    try:
+        with open(filepath, "r") as f:
+            data = json.load(f)
+            return data
+    except:
+        return {}
 
 
 if len(sys.argv) == 2:
